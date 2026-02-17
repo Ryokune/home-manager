@@ -116,6 +116,9 @@
       };
     };
   };
+
+  services.polkit-gnome.enable = true;
+
   services.gpg-agent = {
     enable = true;
     defaultCacheTtl = 1800;
@@ -153,11 +156,8 @@
       };
     };
 
-    # neovim = {
-    #   enable = true;
-    #   defaultEditor = true;
-    # };
-
+    # TODO: Currently working on my own NVF standalone module.
+    # After having that set up, I should switch over to using dev shells for all my projects instead of this mess.
     nvf = {
       enable = true;
 
@@ -315,17 +315,12 @@
       enable = true;
       settings = {
         window = {
-          blur = true; # Optional: Enables blurring if supported by compositor
+          blur = true;
         };
       };
     };
     fuzzel = {
       enable = true;
-      # settings = {
-      #   main = {
-      #     font = "Maple Mono NF CN:size=12";
-      #   };
-      # };
     };
     bat = {
       enable = true;
@@ -349,8 +344,6 @@
   # release notes.
   home.stateVersion = "25.11"; # Please read the comment before changing.
 
-  # The home.packages option allows you to install Nix packages into your
-  # environment.
   services = {
     gnome-keyring.enable = true;
     mako = {
@@ -362,6 +355,7 @@
       };
     };
   };
+
   home.packages = with pkgs; [
     substratum.hayase
     substratum.wake-home
