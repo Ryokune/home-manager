@@ -125,7 +125,6 @@
     enableSshSupport = true;
     pinentry.package = pkgs.pinentry-curses;
   };
-
   programs = {
     gpg = {
       enable = true;
@@ -145,6 +144,8 @@
         init = {
           defaultBranch = "main";
         };
+        submodule.recurse = true;
+        push.recurseSubmodules = "check";
       };
     };
     firefox = {
