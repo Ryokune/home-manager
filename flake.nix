@@ -16,7 +16,7 @@
     };
 
     dotfiles = {
-      url = "github:Ryoune/.dotfiles";
+      url = "github:Ryokune/.dotfiles";
     };
 
     nvf = {
