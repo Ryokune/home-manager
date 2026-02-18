@@ -74,11 +74,11 @@
         "nixpkgs": "nixpkgs"
       },
       "locked": {
-        "lastModified": 1771397776,
-        "narHash": "sha256-3aflQ8Pa2oSKGtveoeIdb7BXcN0K74zTubs3y8pUBPQ=",
+        "lastModified": 1771398363,
+        "narHash": "sha256-d9Q0pfXfNlUqImOAgg2TGz7pdzbZ6wADzcHBv4hxkzQ=",
         "owner": "Ryokune",
         "repo": ".dotfiles",
-        "rev": "849e10b29896c8dd960fb027bc2637ade3db7db2",
+        "rev": "3e3aceb29b4ed1a19505b6fe670b35f14fa972a3",
         "type": "github"
       },
       "original": {
