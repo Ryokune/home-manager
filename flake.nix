@@ -16,7 +16,7 @@
     };
 
     dotfiles = {
-      url = "git+file:///home/fish/Documents/projects/nix-flakes/dotfiles";
+      url = "github:Ryoune/.dotfiles";
     };
 
     nvf = {
