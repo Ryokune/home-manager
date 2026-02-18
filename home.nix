@@ -325,6 +325,11 @@
     };
     fuzzel = {
       enable = true;
+      settings = {
+        main = {
+          launch-prefix = "app2unit --";
+        };
+      };
     };
     bat = {
       enable = true;
@@ -363,6 +368,7 @@
   home.packages = with pkgs; [
     substratum.hayase
     substratum.wake-home
+    app2unit
     seahorse
     ripgrep
     trash-cli
@@ -420,6 +426,9 @@
   #
   home.sessionVariables = {
     NH_HOME_FLAKE = "${config.home.homeDirectory}/.config/home-manager";
+
+    # remove if not using uwsm
+    APP2UNIT_SLICES = "a=app-graphical.slice b=background-graphical.slice s=session-graphical.slice";
   };
 
   # Let Home Manager install and manage itself.
