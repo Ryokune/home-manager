@@ -126,6 +126,9 @@
     pinentry.package = pkgs.pinentry-curses;
   };
   programs = {
+    mpv = {
+      enable = true;
+    };
     gpg = {
       enable = true;
     };
