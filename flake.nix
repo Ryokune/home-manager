@@ -26,6 +26,7 @@
 
     substratum = {
       url = "github:Ryokune/substratum";
+      inputs.nixpkgs.follows = "nixpkgs";
     };
   };
 
