@@ -190,6 +190,18 @@
               silent = true;
               action = ":Neotree toggle reveal<CR>";
             }
+            {
+              key = "<leader>[";
+              mode = "n";
+              silent = true;
+              action = "vim.fn.search('[([{<]', 'n')";
+            }
+            {
+              key = "<leader>]";
+              mode = "n";
+              silent = true;
+              action = "vim.fn.search('[([{<]', 'bn')";
+            }
           ];
 
           options = {
@@ -203,6 +215,20 @@
             softtabstop = 2;
             expandtab = true;
             updatetime = 50;
+          };
+
+          extraPlugins = {
+            log-highlight = {
+              package = pkgs.vimUtils.buildVimPlugin {
+                name = "log-highlight-nvim";
+                src = pkgs.fetchFromGitHub {
+                  owner = "fei6409";
+                  repo = "log-highlight.nvim";
+                  rev = "ca88628f6dd3b9bb46f9a7401669e24cf7de47a4";
+                  sha256 = "sha256-s2GL6ddIA9wJI+K/irDtW7xvM/ms8it+04akr3ljJLA=";
+                };
+              };
+            };
           };
 
           statusline.lualine.enable = true;
