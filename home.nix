@@ -125,6 +125,7 @@
     enableSshSupport = true;
     pinentry.package = pkgs.pinentry-curses;
   };
+
   programs = {
     mpv = {
       enable = true;
@@ -167,6 +168,7 @@
 
       # Your settings need to go into the settings attribute set
       # most settings are documented in the appendix
+
       settings = {
         vim = {
           comments = {
@@ -180,6 +182,15 @@
           undoFile.enable = true;
           preventJunkFiles = true;
           tabline.nvimBufferline.enable = true;
+
+          keymaps = [
+            {
+              key = "<leader>e";
+              mode = "n";
+              silent = true;
+              action = ":Neotree toggle reveal<CR>";
+            }
+          ];
 
           options = {
             clipboard = "unnamedplus";
