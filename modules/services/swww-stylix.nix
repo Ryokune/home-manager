@@ -1,7 +1,12 @@
-{ lib, ... }:
+{ self, ... }:
 {
   flake.homeModules.swww-stylix =
-    { pkgs, config, ... }:
+    {
+      pkgs,
+      config,
+      lib,
+      ...
+    }:
     {
       options.services.swwwStylix = {
         enable = lib.mkEnableOption "swww stylix wallpaper service";

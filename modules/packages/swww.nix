@@ -1,11 +1,9 @@
-{ self, lib, ... }:
+{ self, ... }:
 
 {
   flake.homeModules.swww =
     {
-      pkgs,
       config,
-      lib,
       ...
     }:
 
