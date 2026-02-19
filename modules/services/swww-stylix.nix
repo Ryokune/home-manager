@@ -16,12 +16,14 @@
           Unit = {
             Description = "SWWW Stylix";
             After = [ "swww.service" ];
+            BindsTo = [ "swww.service" ];
           };
           Service = {
             ExecStart = "${pkgs.swww}/bin/swww img ${config.stylix.image} --transition-type fade";
+            Type = "oneshot";
             Restart = "on-failure";
           };
-          Install.WantedBy = [ "graphical-session.target" ];
+          Install.WantedBy = [ "swww.service" ];
         };
       };
     };
