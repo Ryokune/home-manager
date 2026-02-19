@@ -1,9 +1,11 @@
 {
-  description = "Home Manager configuration of fish";
+  description = "A very basic flake";
 
   inputs = {
-    # Specify the source of Home Manager and Nixpkgs.
-    nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+    nixpkgs.url = "github:nixos/nixpkgs?ref=nixos-unstable";
+
+    flake-parts.url = "github:hercules-ci/flake-parts";
+    import-tree.url = "github:vic/import-tree";
 
     home-manager = {
       url = "github:nix-community/home-manager";
@@ -31,39 +33,20 @@
   };
 
   outputs =
-    {
-      nixpkgs,
-      home-manager,
-      stylix,
-      dotfiles,
-      nvf,
-      substratum,
-      ...
-    }:
-    let
-      system = "x86_64-linux";
-      pkgs = nixpkgs.legacyPackages.${system};
-    in
-    {
-      homeConfigurations."fish" = home-manager.lib.homeManagerConfiguration {
-        inherit pkgs;
-        # Specify your home configuration modules here, for example,
-        # the path to your home.nix.
-        modules = [
-          ./home.nix
-          nvf.homeManagerModules.default
-          stylix.homeModules.stylix
-          dotfiles.homeModules.default
-          substratum.homeModules.default
-          {
-            nixpkgs.overlays = [
-              substratum.overlays.default
-            ];
-          }
-        ];
+    inputs:
+    inputs.flake-parts.lib.mkFlake { inherit inputs; } {
+      systems = [
+        "x86_64-linux"
+        "aarch64-linux"
+        "aarch64-darwin"
+        "x86_64-darwin"
+      ];
 
-        # Optionally use extraSpecialArgs
-        # to pass through arguments to home.nix
-      };
+      imports = [
+        (inputs.import-tree ./modules)
+        inputs.home-manager.flakeModules.home-manager
+      ];
+      debug = true;
     };
+
 }
