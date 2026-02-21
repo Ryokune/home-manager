@@ -78,11 +78,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1771646042,
-        "narHash": "sha256-EZO2vtlFmWyQrXLCUXSJfGVZ9rxIljG9o9ORqA6Wdes=",
+        "lastModified": 1771646357,
+        "narHash": "sha256-JiQh5/wPNUC5wSuHQZFmiQMcHdMe7SnOzAzR2qb5DjQ=",
         "owner": "Ryokune",
         "repo": ".dotfiles",
-        "rev": "39da573d69c870507f35a850ea03ca3a1f3af41b",
+        "rev": "51981171d4d129332ade8a1ca302f75ee8cadd13",
         "type": "github"
       },
       "original": {
