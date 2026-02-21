@@ -19,6 +19,8 @@
 
     dotfiles = {
       url = "github:Ryokune/.dotfiles";
+      inputs.home-manager.follows = "home-manager";
+      inputs.nixpkgs.follows = "nixpkgs";
     };
 
     nvf = {
