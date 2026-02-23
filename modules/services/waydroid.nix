@@ -9,7 +9,7 @@
           After = [ "waydroid-container.service" ];
         };
         Install = {
-          WantedBy = [ "default.target" ];
+          WantedBy = [ "graphical-session.target" ];
         };
         Service = {
           Type = "simple";
