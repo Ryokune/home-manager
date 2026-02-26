@@ -24,13 +24,13 @@
     };
     fonts = {
       monospace = {
-        package = pkgs.maple-mono.CN;
-        name = "Maple Mono CN";
+        package = pkgs.maple-mono.NF-CN;
+        name = "Maple Mono NF CN";
       };
-      emoji = {
-        package = pkgs.noto-fonts-color-emoji;
-        name = "Noto Color Emoji";
-      };
+      # emoji = {
+      #   package = pkgs.noto-fonts-color-emoji;
+      #   name = "Noto Color Emoji";
+      # };
       sizes = {
         applications = 11;
         terminal = 11.5;
@@ -57,6 +57,12 @@
         profileNames = [ "default" ];
       };
       alacritty = {
+        enable = true;
+        fonts.override = {
+          serif = config.stylix.fonts.monospace;
+          sansSerif = config.stylix.fonts.monospace;
+          emoji = config.stylix.fonts.monospace;
+        };
         colors.enable = false;
       };
       fuzzel = {
