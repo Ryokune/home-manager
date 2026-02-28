@@ -11,7 +11,7 @@
     VISUAL = "nvim";
   };
   programs.nvf = {
-
+    defaultEditor = true;
     enable = true;
 
     # Your settings need to go into the settings attribute set

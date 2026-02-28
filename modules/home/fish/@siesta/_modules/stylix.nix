@@ -6,8 +6,6 @@
   ...
 }:
 {
-  imports = [
-  ];
   stylix = {
     enable = true;
     autoEnable = true;
@@ -39,7 +37,6 @@
       };
 
     };
-
     # TODO: Move this into its own folder? eg: stylix/mako.nix, stylix/firefox.nix
     # OR: Place these stylix options INSIDE of the packages themselves? eg: programs/mako.nix, etc.
     targets = {

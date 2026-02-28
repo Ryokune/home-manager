@@ -12,4 +12,13 @@
       };
     };
   };
+  xdg.terminal-exec = {
+    enable = true;
+    settings = {
+      default = [ "alacritty.desktop" ];
+    };
+  };
+  home.sessionVariables = {
+    TERMINAL = "alacritty";
+  };
 }
