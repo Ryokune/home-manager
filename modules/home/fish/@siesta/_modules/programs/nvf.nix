@@ -31,6 +31,12 @@
         preventJunkFiles = true;
         tabline.nvimBufferline.enable = true;
 
+        utility = {
+          new-file-template = {
+            enable = true;
+          };
+        };
+
         keymaps = [
           {
             key = "<leader>e";
@@ -81,7 +87,12 @@
 
         statusline.lualine.enable = true;
         telescope.enable = true;
-        autocomplete.blink-cmp.enable = true;
+        autocomplete.blink-cmp = {
+          enable = true;
+          setupOpts = {
+            signature.enabled = true;
+          };
+        };
         treesitter.enable = true;
         visuals.fidget-nvim.enable = true;
         binds.whichKey.enable = true;
@@ -106,9 +117,7 @@
             };
           };
         };
-
         lsp = {
-
           trouble.enable = true;
           formatOnSave = true;
           enable = true;
@@ -188,6 +197,10 @@
         };
         languages = {
           enableTreesitter = true;
+          ts = {
+            enable = true;
+            #lsp.servers = [];
+          };
           nix = {
             enable = true;
             lsp.servers = [ "nixd" ];
