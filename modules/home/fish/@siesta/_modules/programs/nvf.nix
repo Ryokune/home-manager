@@ -96,8 +96,14 @@
         treesitter.enable = true;
         visuals.fidget-nvim.enable = true;
         binds.whichKey.enable = true;
-        filetree.neo-tree.enable = true;
-
+        filetree.neo-tree = {
+          enable = true;
+          setupOpts = {
+            window = {
+              position = "right";
+            };
+          };
+        };
         diagnostics = {
           enable = true;
           config = {
