@@ -9,7 +9,6 @@
   stylix = {
     enable = true;
     autoEnable = true;
-    image = ../ado.jpeg;
     polarity = "dark";
     opacity.terminal = 0.8;
     icons = {
@@ -41,6 +40,11 @@
     # OR: Place these stylix options INSIDE of the packages themselves? eg: programs/mako.nix, etc.
     targets = {
       nvf.enable = false;
+      swaylock = {
+        image = {
+          override = "${../assets/swaylock-bg.png}";
+        };
+      };
       mako = {
         fonts.override = {
           serif = config.stylix.fonts.monospace;

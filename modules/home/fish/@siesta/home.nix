@@ -18,7 +18,7 @@
           (inputs.import-tree ./_modules)
           {
             nixpkgs.overlays = [ inputs.substratum.overlays.default ];
-            stylix.image = ./ado.jpeg;
+            stylix.image = ./assets/ado.jpeg;
             home.username = "fish";
             home.homeDirectory = "/home/fish";
             home.stateVersion = "25.11";

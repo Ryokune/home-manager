@@ -1,5 +1,6 @@
 {
   self,
+  lib,
   pkgs,
   config,
   ...
@@ -9,10 +10,8 @@
     enable = true;
     package = pkgs.swaylock-effects;
     settings = {
-      screenshots = true; # Use screenshot as background
       clock = true; # Show clock
       indicator = true; # Show key indicator
-
       # Blur effect: <radius>x<passes>
       effect-blur = "7x5";
 
