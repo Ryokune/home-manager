@@ -8,12 +8,8 @@
 {
   programs.swaylock = {
     enable = true;
-    package = pkgs.swaylock-effects;
     settings = {
-      clock = true; # Show clock
-      indicator = true; # Show key indicator
-      # Blur effect: <radius>x<passes>
-      effect-blur = "7x5";
+      indicator-idle-visible = true; # Show key indicator
 
       # Other settings
       font = "Maple Mono NF CN";
