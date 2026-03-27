@@ -17,11 +17,13 @@
           inputs.stylix.homeModules.stylix
           (inputs.import-tree ./_modules)
           {
-            nixpkgs.overlays = [ inputs.substratum.overlays.default ];
+            nixpkgs.overlays = [
+              inputs.substratum.overlays.default
+            ];
             stylix.image = ./assets/ado.jpeg;
             home.username = "fish";
             home.homeDirectory = "/home/fish";
-            home.stateVersion = "25.11";
+            home.stateVersion = "26.05";
           }
         ];
       };
