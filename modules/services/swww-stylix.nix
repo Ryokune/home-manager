@@ -15,15 +15,15 @@
         systemd.user.services.swww-stylix-service = {
           Unit = {
             Description = "SWWW Stylix";
-            After = [ "swww.service" ];
-            BindsTo = [ "swww.service" ];
+            After = [ "awww.service" ];
+            BindsTo = [ "awww.service" ];
           };
           Service = {
-            ExecStart = "${pkgs.swww}/bin/swww img ${config.stylix.image} --transition-type fade";
+            ExecStart = "${pkgs.awww}/bin/awww img ${config.stylix.image} --transition-type fade";
             Type = "oneshot";
             Restart = "on-failure";
           };
-          Install.WantedBy = [ "swww.service" ];
+          Install.WantedBy = [ "awww.service" ];
         };
       };
     };
