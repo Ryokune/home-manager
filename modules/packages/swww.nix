@@ -12,7 +12,7 @@
         self.homeModules.swww-stylix
       ];
 
-      services.swww.enable = true;
+      services.awww.enable = true;
       services.swwwStylix.enable = config.stylix.image != null;
 
     };

@@ -14,7 +14,7 @@
       config = lib.mkIf config.services.swwwStylix.enable {
         systemd.user.services.swww-stylix-service = {
           Unit = {
-            Description = "SWWW Stylix";
+            Description = "AWWW Stylix";
             After = [ "awww.service" ];
             BindsTo = [ "awww.service" ];
           };
